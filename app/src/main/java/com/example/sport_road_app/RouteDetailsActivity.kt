@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class RouteDetailsActivity : AppCompatActivity() {
+class RouteDetailsActivity : AppCompatActivity(), StopWatchFragment.OnDataPass {
+    private val dbHelper = DBHelper(this)
+    private lateinit var selectedRoute: Route
+    private lateinit var routeTimeTextView: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_route_details)
 
-        val selectedRoute = intent.extras?.get("selectedRoute") as Route
+        selectedRoute = intent.extras?.get("selectedRoute") as Route
 
         val routeIdTextView = findViewById<TextView>(R.id.routeIdTextView)
         val routeNameTextView = findViewById<TextView>(R.id.routeNameTextView)
@@ -17,6 +20,7 @@ class RouteDetailsActivity : AppCompatActivity() {
         val routeLengthTextView = findViewById<TextView>(R.id.routeLengthTextView)
         val routeLocationTextView = findViewById<TextView>(R.id.routeLocationTextView)
         val routeDifficultyTextView = findViewById<TextView>(R.id.routeDifficultyTextView)
+        routeTimeTextView = findViewById<TextView>(R.id.routeTimeTextView)
 
         routeIdTextView.text = selectedRoute.id.toString()
         routeNameTextView.text = selectedRoute.name
@@ -24,5 +28,11 @@ class RouteDetailsActivity : AppCompatActivity() {
         routeLengthTextView.text = selectedRoute.length.toString()
         routeLocationTextView.text = selectedRoute.location
         routeDifficultyTextView.text = selectedRoute.difficulty
+        routeTimeTextView.text = selectedRoute.time
+    }
+
+    override fun onDataPass(data: String) {
+        dbHelper.updateTime(selectedRoute.id, data)
+        routeTimeTextView.text = data
     }
 }

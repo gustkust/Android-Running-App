@@ -22,6 +22,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
         private val COL_LENGTH = "Length"
         private val COL_LOCATION = "Location"
         private val COL_DIFFICULTY = "Difficulty"
+        private val COL_TIME = "Time"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
@@ -32,7 +33,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
                     "$COL_DESCRIPTION TEXT, " +
                     "$COL_LENGTH DOUBLE(6, 2), " +
                     "$COL_LOCATION TEXT, " +
-                    "$COL_DIFFICULTY TEXT" +
+                    "$COL_DIFFICULTY TEXT, " +
+                    "$COL_TIME TEXT" +
                     ")")
         db!!.execSQL(CREATE_TABLE_QUERY)
     }
@@ -40,6 +42,21 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db!!.execSQL("DROP TABLE IF EXISTS $TABLE_NAME")
         onCreate(db)
+    }
+
+    fun initDataBase() {
+        val db = this.writableDatabase
+        val CREATE_TABLE_QUERY =
+            ("CREATE TABLE $TABLE_NAME (" +
+                    "$COL_ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                    "$COL_NAME TEXT, " +
+                    "$COL_DESCRIPTION TEXT, " +
+                    "$COL_LENGTH DOUBLE(6, 2), " +
+                    "$COL_LOCATION TEXT, " +
+                    "$COL_DIFFICULTY TEXT, " +
+                    "$COL_TIME TEXT" +
+                    ")")
+        db!!.execSQL(CREATE_TABLE_QUERY)
     }
 
     fun getAllRoutes(): List<Route> {
@@ -55,7 +72,8 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_DESCRIPTION)),
                     cursor.getDouble(cursor.getColumnIndexOrThrow(COL_LENGTH)),
                     cursor.getString(cursor.getColumnIndexOrThrow(COL_LOCATION)),
-                    cursor.getString(cursor.getColumnIndexOrThrow(COL_DIFFICULTY))
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_DIFFICULTY)),
+                    cursor.getString(cursor.getColumnIndexOrThrow(COL_TIME))
                 )
                 listRoutes.add(route)
             } while (cursor.moveToNext())
@@ -66,12 +84,14 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
 
     fun addRoute(route: Route) {
         val db = this.writableDatabase
+//        db.execSQL("DROP TABLE Route")
         val values = ContentValues()
         values.put(COL_NAME, route.name)
         values.put(COL_DESCRIPTION, route.description)
         values.put(COL_LENGTH, route.length)
         values.put(COL_LOCATION, route.location)
         values.put(COL_DIFFICULTY, route.difficulty)
+        values.put(COL_TIME, route.time)
 
         db.insert(TABLE_NAME, null, values)
         db.close()
@@ -80,7 +100,15 @@ class DBHelper(context: Context) : SQLiteOpenHelper(
     fun delRoute(route: Route) {
         val db = this.writableDatabase
 
-        db.delete(TABLE_NAME, COL_NAME + "=" + "\""  + route.name + "\"", null)
+        db.delete(TABLE_NAME, COL_NAME + "=" + "\"" + route.name + "\"", null)
         db.close()
+    }
+
+    fun updateTime(id: Int, data: String) {
+        val db = this.writableDatabase
+
+        val query =
+            ("UPDATE $TABLE_NAME SET $COL_TIME = \"$data\" WHERE $COL_ID = $id")
+        db!!.execSQL(query)
     }
 }

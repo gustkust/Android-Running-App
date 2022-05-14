@@ -9,8 +9,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // loadRoutesToDataBase()
+//        dbHelper.initDataBase()
+//        loadRoutesToDataBase()
         // deleteRoutesFromDataBase()
     }
 
@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
                 "Krotka trasa po sciezkach w lasku debinskim",
                 4.00,
                 "Forrest",
-                "Easy"
+                "Easy",
+                "00:10:52"
             )
         )
 
@@ -34,7 +35,8 @@ class MainActivity : AppCompatActivity() {
                 "Droga po calej dlugosci wartostrady, w jedna strone",
                 8.50,
                 "City",
-                "Medium"
+                "Medium",
+                "00:25:02"
             )
         )
 
@@ -45,7 +47,8 @@ class MainActivity : AppCompatActivity() {
                 "Jedna petla dookola jeziora maltanskiego",
                 10.00,
                 "City",
-                "Medium"
+                "Medium",
+                "01:01:24"
             )
         )
     }
@@ -58,7 +61,8 @@ class MainActivity : AppCompatActivity() {
                 "Krotka trasa po sciezkach w lasku debinskim",
                 4.00,
                 "Forrest",
-                "Easy"
+                "Easy",
+                "00:10:52"
             )
         )
 
@@ -69,7 +73,8 @@ class MainActivity : AppCompatActivity() {
                 "Droga po calej dlugosci wartostrady, w jedna strone",
                 8.50,
                 "City",
-                "Medium"
+                "Medium",
+                "00:25:02"
             )
         )
 
@@ -80,7 +85,8 @@ class MainActivity : AppCompatActivity() {
                 "Jedna petla dookola jeziora maltanskiego",
                 10.00,
                 "City",
-                "Medium"
+                "Medium",
+                "01:01:24"
             )
         )
     }

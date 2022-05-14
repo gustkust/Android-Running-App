@@ -8,5 +8,6 @@ data class Route(
     val description: String,
     val length: Double,
     val location: String,
-    val difficulty: String
+    val difficulty: String,
+    val time: String
 ) : Serializable
