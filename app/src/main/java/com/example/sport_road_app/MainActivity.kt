@@ -2,16 +2,31 @@ package com.example.sport_road_app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private val dbHelper = DBHelper(this)
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+//        dbHelper.deleteDataBase()
 //        dbHelper.initDataBase()
 //        loadRoutesToDataBase()
-        // deleteRoutesFromDataBase()
+//        deleteRoutesFromDataBase()
+
+        val recView = findViewById<RecyclerView>(R.id.recyclerView)
+
+        layoutManager = LinearLayoutManager(this)
+        recView.layoutManager = layoutManager
+
+        adapter = RecyclerAdapter(this, dbHelper.getNamesAndImageSrc(),
+            dbHelper.getAllRoutes() as ArrayList<Route>
+        )
+        recView.adapter = adapter
     }
 
     // TODO load from JSON instead
@@ -24,7 +39,9 @@ class MainActivity : AppCompatActivity() {
                 4.00,
                 "Forrest",
                 "Easy",
-                "00:10:52"
+                "00:10:52",
+                "01:01:23",
+                "petla_po_debinie"
             )
         )
 
@@ -36,7 +53,9 @@ class MainActivity : AppCompatActivity() {
                 8.50,
                 "City",
                 "Medium",
-                "00:25:02"
+                "00:25:02",
+                "00:55:42",
+                "wartostrada"
             )
         )
 
@@ -48,7 +67,9 @@ class MainActivity : AppCompatActivity() {
                 10.00,
                 "City",
                 "Medium",
-                "01:01:24"
+                "01:01:24",
+                "02:20:20",
+                "kolko_wokol_malty"
             )
         )
     }
@@ -62,7 +83,9 @@ class MainActivity : AppCompatActivity() {
                 4.00,
                 "Forrest",
                 "Easy",
-                "00:10:52"
+                "00:10:52",
+                "01:01:23",
+                "petla_po_debinie"
             )
         )
 
@@ -74,7 +97,9 @@ class MainActivity : AppCompatActivity() {
                 8.50,
                 "City",
                 "Medium",
-                "00:25:02"
+                "00:25:02",
+                "00:55:42",
+                "wartostrada"
             )
         )
 
@@ -86,7 +111,9 @@ class MainActivity : AppCompatActivity() {
                 10.00,
                 "City",
                 "Medium",
-                "01:01:24"
+                "01:01:24",
+                "02:20:20",
+                "kolko_wokol_malty"
             )
         )
     }

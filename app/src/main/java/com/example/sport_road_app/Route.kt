@@ -9,5 +9,7 @@ data class Route(
     val length: Double,
     val location: String,
     val difficulty: String,
-    val time: String
+    val best_time: String,
+    val last_time: String,
+    val image_src: String
 ) : Serializable
