@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sport_road_app">
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".RouteDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+
+            android:name=".LoadingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
