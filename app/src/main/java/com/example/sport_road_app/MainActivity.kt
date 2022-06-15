@@ -72,6 +72,34 @@ class MainActivity : AppCompatActivity() {
                 "kolko_wokol_malty"
             )
         )
+
+        dbHelper.addRoute(
+            Route(
+                4,
+                "Lorem ipsum1",
+                "Lorem ipsum1",
+                10.00,
+                "City",
+                "Medium",
+                "02:01:24",
+                "04:20:20",
+                "bieganie"
+            )
+        )
+
+        dbHelper.addRoute(
+            Route(
+                5,
+                "Lorem ipsum2",
+                "Lorem ipsum2",
+                10.00,
+                "City",
+                "Medium",
+                "03:01:24",
+                "04:20:20",
+                "bieganie"
+            )
+        )
     }
 
     private fun deleteRoutesFromDataBase() {
@@ -114,6 +142,34 @@ class MainActivity : AppCompatActivity() {
                 "01:01:24",
                 "02:20:20",
                 "kolko_wokol_malty"
+            )
+        )
+
+        dbHelper.addRoute(
+            Route(
+                4,
+                "Lorem ipsum1",
+                "Lorem ipsum1",
+                10.00,
+                "City",
+                "Medium",
+                "02:01:24",
+                "04:20:20",
+                "bieganie"
+            )
+        )
+
+        dbHelper.addRoute(
+            Route(
+                5,
+                "Lorem ipsum2",
+                "Lorem ipsum2",
+                10.00,
+                "City",
+                "Medium",
+                "03:01:24",
+                "04:20:20",
+                "bieganie"
             )
         )
     }
