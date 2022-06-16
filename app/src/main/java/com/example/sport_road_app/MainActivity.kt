@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private var adapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        getSupportActionBar()?.hide()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         dbHelper.deleteDataBase()
