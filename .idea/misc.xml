@@ -10,12 +10,18 @@
         <entry key="..\:/Users/gkust/AndroidStudioProjects/sport_road_app/app/src/main/res/layout/fragment_routes_list.xml" value="0.1" />
         <entry key="..\:/Users/gkust/AndroidStudioProjects/sport_road_app/app/src/main/res/layout/fragment_routes_list_list.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/gkust/AndroidStudioProjects/sport_road_app/app/src/main/res/layout/fragment_stop_watch.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.165" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable/animation_item.xml" value="0.124" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable/ic_back.xml" value="0.1" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable/ic_launcher_background.xml" value="0.165" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable/ic_menu.xml" value="0.1" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/drawable/ic_timer.xml" value="0.18" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/activity_loading.xml" value="0.1" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/activity_route_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/activity_start.xml" value="0.25" />
         <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/card_layout.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/matwy/AndroidStudioProjects/Android-Running-App/app/src/main/res/layout/fragment_stop_watch.xml" value="0.1" />
       </map>
     </option>
   </component>

@@ -7,7 +7,54 @@
     app:contentPadding="16dp"
     tools:context=".RouteDetailsActivity">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
 
+        android:backgroundTint="#001AFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButtonMenu"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButtonMenu"
+        app:srcCompat="@drawable/ic_back" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+
+        android:backgroundTint="#001AFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButtonBack"
+        app:layout_constraintEnd_toEndOf="@+id/floatingActionButtonBack"
+        app:srcCompat="@drawable/ic_timer" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButtonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+
+        android:backgroundTint="#001AFF"
+        android:clickable="true"
+        android:focusable="true"
+        android:tint="@color/white"
+        android:visibility="visible"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_menu" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -121,17 +168,6 @@
                 app:layout_constraintStart_toEndOf="@+id/routeLengthTextView"
                 app:layout_constraintTop_toTopOf="@+id/routeLengthTextView" />
 
-            <Button
-                android:id="@+id/showTimeDataButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="SHOW TIME DATA"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.504"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/routeLengthTextView" />
-
             <TextView
                 android:id="@+id/routeLastTimeTextView"
                 android:layout_width="wrap_content"
@@ -152,11 +188,10 @@
                 android:id="@+id/bestTimeTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
                 android:text="Best Time:"
                 app:layout_constraintEnd_toEndOf="@+id/lastTimeTextView"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/showTimeDataButton" />
+                app:layout_constraintTop_toBottomOf="@+id/routeLengthTextView" />
 
             <TextView
                 android:id="@+id/lastTimeTextView"
